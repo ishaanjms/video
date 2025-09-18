@@ -4,27 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loop Video</title>
+  <!-- Import font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
       background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px; /* add breathing room */
+      box-sizing: border-box;
     }
+
     video {
       max-width: 100%;
-      max-height: 100%;
+      max-height: 500px; /* fixed limit so it doesn’t push text offscreen */
       border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .caption {
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #f0f0f0;
+      letter-spacing: 1px;
+    }
+
+    .upload-btn {
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px rgba(255, 65, 108, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 65, 108, 0.9);
+    }
+
+    .description {
+      margin-top: 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      color: #ddd;
     }
   </style>
 </head>
 <body>
+  <div class="caption">Ask me for QR code without asking</div>
+
   <video autoplay loop muted playsinline>
     <source src="Animation%20Qr%20gesture%20.mp4" type="video/mp4">
     Your browser does not support video playback.
   </video>
+
+  <button class="upload-btn" 
+          onclick="window.open('https://drive.google.com/drive/folders/1Zxcq6xp4eGE6enEJYGXOlFJ6oUEa-nEY', '_blank')">
+    Upload Your Video
+  </button>
+
+  <div class="description">
+    Hello everyone! As QR codes become an integral part of our daily lives, especially for digital payments, I'm working on a project called <strong>'Ask me for QR code without asking.'</strong> The goal is to create a repository of gestures that convey specific actions, like requesting a QR code scan, without needing to say a word. These gestures can eventually become part of our everyday body language. I'd love for you to contribute to this project by recording a short video of your hand making a gesture that represents asking for a QR code.
+  </div>
 </body>
 </html>
+
 
